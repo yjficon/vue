@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>拖拽</title>
+		<style type="text/css">
+			div{
+				width: 10rem;
+				height: 10rem;
+				background: red;
+				float: left;
+				margin: 1rem;
+			}
+			#div2{
+				background: pink;
+			}
+			#div3{
+				background: orange;
+			}
+			p{
+				height: 4.5rem;
+				background: paleturquoise;
+				line-height: 4.5rem;
+				cursor: move;
+				font-size: 1.6rem;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		    <div id="div1">
+			    <p id="box1" draggable="true">拖拽内容1</p>
+			    <p id="box2" draggable="true">拖拽内容2</p>
+			    <p id="box3" draggable="true">拖拽内容3</p>
+		    </div>
+			<div id="div2"></div>
+			<div id="div3"></div>
+			<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(()=>{
+				//1.找到目标对象
+				document.ondragstart =function(e){
+					e.dataTransfer.setData('domId',e.target.id);
+				};
+				//2.阻止对元素的默认处理方式
+				document.ondragover = (e)=>{
+					e.preventDefault();
+				};
+				//3.将其放下
+				document.ondrop = function (e) {
+					let data = e.dataTransfer.getData('domId');
+					e.target.appendChild(document.getElementById(data);
+               };
+			})
+		</script>
+	</body>
+</html>

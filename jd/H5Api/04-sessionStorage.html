@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			用户名：<input type="text" id="intro"/>
+			<button id="set">存</button>
+			<button id="get">读</button>
+			<button id="del">删</button>
+		</div>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(()=>{
+				let college =  {
+					name:'yjfi',
+					college:['HTML5','JAVASCRIPT'],
+					date:Date.now()
+				};
+				//1.进入就存储数据
+//				window.sessionStorage.setItem('name','yjf');
+//				window.sessionStorage.setItem('intro','yjf@icon');
+//				window.sessionStorage.setItem('college',JSON.stringify(college));
+                $('#set').on('click',()=>{
+                	let  val = $('#intro').val();//获取input内的val
+                	window.sessionStorage.setItem('intro',val)
+                });
+                $('#get').on('click',()=>{
+                	let  val = $('#intro').val();//获取input内的val
+                	window.sessionStorage.getItem('intro')
+                });
+                $('#del').on('click',()=>{
+                	let  val = $('#intro').val();//获取input内的val
+                	window.sessionStorage.removeItem('intro');
+                });
+			})
+		</script>
+	</body>
+</html>
+ 

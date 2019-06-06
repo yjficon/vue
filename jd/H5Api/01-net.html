@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>net</title>
+		<style type="text/css">
+			html{
+				font-size: 10px;
+			}
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			.net{
+				width: 20rem;
+				height: 4rem;
+				line-height: 4rem;
+				text-align: center;
+				margin: 10rem auto;
+				border-radius: 0.5rem;
+				font-size: 1.8rem;
+				color:#E9232C;
+				background: #E0E0E0;
+				position: fixed;
+				top: 10rem;
+				left: 10rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="net"></div>
+		<button id="btn">获取网络状态</button>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//1.测试当前的网络
+				$('#btn').on('click',()=>{
+					alert(window.navigator.onLine)
+				});
+				//2.当网络连接的时候
+				window.addEventListener('online',()=>{
+					$('.net').text('网络处于连接状态').fadeIn(400).delay(1000).fadeOut();
+				})
+				//2.当网络断开连接的时候
+				window.addEventListener('offline',()=>{
+					$('.net').text('网络处于断开状态~').fadeIn(400).delay(1000).fadeOut();
+				})
+			})
+		</script>
+	</body>
+</html>

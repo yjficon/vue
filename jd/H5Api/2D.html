@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>2D</title>
+		<style type="text/css">
+			body{
+				perspective: 10rem;
+			}
+			div{
+				width: 10rem;
+				height: 10rem;
+			}
+			div.d{
+				background: paleturquoise;
+				transition: all 0.5s ; 
+			}
+			div.d:active{
+				transform: translate(10rem,60rem);
+			}
+			div.s{
+				background: plum;
+				margin: 0 auto;
+				margin: 5rem;
+				background: #655;
+				background:linear-gradient(90deg,rgba(200,0,0,.5) 50%,transparent 0),
+              linear-gradient(rgba(200,0,0,.5) 50%,transparent 0),radial-gradient(tan 30%,transparent 0);
+				-webkit-background-size: 3rem 3rem;
+				background-size: 3rem 3rem;
+			}
+			div.s:hover{
+				transform: scale(3);
+			}
+			section{
+				text-align: center;
+				width: 48rem;
+				height: 30rem;
+				background: skyblue;
+				margin: 0 auto;
+			}
+			section img{
+				transition: all 1s;
+				
+			}
+			section:hover img{
+				transform: scale(1.5);
+				transform: translateZ(8rem);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d"></div>
+		<div class="s"></div>
+		<section>
+			<h1>丸美</h1>
+			<img src="img/banner_4.jpg"width="80%"/>
+		</section>
+	</body>
+</html>

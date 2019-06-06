@@ -1,0 +1,85 @@
+html{
+	font-size: 1rem;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+figcaption{
+	font-size: 3rem;
+	text-align: center;
+	margin: 2rem 0;
+}
+.player{
+	width: 72rem;
+	height: 36rem;
+	margin: 0 auto;
+	background:#373737  url(../img/loading.gif) center/30rem no-repeat;
+	text-align: center;
+	position: relative;
+}
+.player video{
+	display: none;
+	margin: 0 auto;
+	height: 100%;
+}
+.player video::-webkit-media-controls{
+	display: none !important;
+}
+.controls{
+	width: 70rem;
+	height: 4.4rem;
+	background:rgba(255,255,255,.1);
+	border-radius: 0.5rem;
+	margin-left: 1rem;
+	/*left: 50%;*/
+	bottom: 0.5rem;
+	position: absolute;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+}
+.switch{
+	flex: 1;
+	font-size: 6rem;
+	color: #fff;
+	
+}
+.progress{
+	flex: 7;
+	background: #555;
+	height: 1rem;
+	border-radius: 0.3rem;
+	position: relative;
+}
+.progress .line{
+	width: 0rem;
+	height: 100%;
+	background: #fff;
+	position: absolute;
+	border-radius: 0.3rem;
+	left: 0;
+	bottom: 0;
+}
+.progress .bar{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	/*background: pink;*/
+	z-index: 2;
+}
+.time{
+	flex: 2;
+	color: #fff;
+	font-size: 1.6rem;
+}
+.expand{
+	flex: 1;
+	font-size: 3rem;
+	color: #fff;
+}

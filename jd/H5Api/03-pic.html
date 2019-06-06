@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="file" id="file" multiple=""/>
+		<img class="content" src=""/>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#file').on('change',function(){//2.初始化reder对象
+					let reader = new FileReader();//3.读取
+					reader.readAsDataURL(this.files[0]);//console.log(reader)
+					$(reader).on('load',function(){//4.读取完毕
+						$('.content').attr('src',this.result)
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

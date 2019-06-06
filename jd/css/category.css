@@ -1,0 +1,73 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+body{
+	font-size: 1.4rem;
+}
+.category-main{
+	width: 100%;
+	height: 100%;
+	margin-top: 4.5rem;
+}
+/*左边固定*/
+.category-main-left{
+	float: left;
+	width: 8rem;
+	height: 100%;
+	overflow: hidden;
+}
+.category-main-left ul li{
+	width: 8rem;
+	height: 4.4rem;
+	line-height: 4.4rem;
+	text-align: center;
+	border-right: 0.1rem solid #e0e0e0;
+	border-bottom: 0.1rem solid #e0e0e0;
+	background: rgba(229, 229, 229,.2)
+}
+.category-main-left ul li:last-child{
+	border-bottom:none;
+}
+.category-main-left ul li.current{
+	background: #fff;
+    border-right: none
+}
+.category-main-left ul li.current a{
+	color: #E9232C;
+}
+/*右边
+ * 一旦设置当前的标签的属性为overflow:hidden
+ * 当前的标签就会被当做一个绝缘集体，占满整个剩余部分
+ */
+
+.category-main-right{
+	height: 100%;
+	overflow: hidden;
+	line-height: 4.4rem;
+	padding: 0.8rem 0.4rem;
+}
+.category-main-right  .category-main-right-banner img{
+	width: 100%;
+	display: block;
+}
+.category-box h3{
+	margin: 1.5rem 0;
+}
+.category-box ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+.category-box ul li{
+	width: 33.33%;
+	margin-bottom: 0.5rem;
+}
+.category-box ul li a{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+.category-box ul li a img{
+	width: 100%;
+}

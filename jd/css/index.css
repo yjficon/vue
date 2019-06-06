@@ -1,0 +1,299 @@
+body{
+	background: #f5f5f5;
+	font-size: 1.6rem;
+}
+.jd-layout{
+	min-width: 30rem;
+	max-width: 64rem;
+	height: 100rem;
+	/*background: red;*/
+	margin: 0 auto;
+	/*子绝父相*/
+	position: relative;
+}
+/*头部*/
+.jd-header{
+	width: 100%;
+	height: 4rem;
+	position: fixed;
+	left: 0;
+	top: 0;
+	/*background: red;*/
+	z-index: 999;
+}
+.jd-header .jd-header-box{
+	min-width: 30rem;
+	max-width: 64rem;
+	background: transparent;
+	height: 4rem;
+	margin: 0 auto;
+	position: relative;
+}
+.jd-header-box .icon-logo{
+	background-position: 0 -10.3rem;
+	width: 6rem;
+	height: 3rem;
+	position: absolute;
+	top: 0.5rem;
+	left: 0.7rem;
+}
+.jd-header .jd-header-box .jd-login{
+	width: 5rem;
+	height: 3.5rem;
+	line-height: 4rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	font-size: 1.6rem;
+	text-align: center;
+}
+.jd-header .jd-header-box form{
+	width: 100%;
+	height: 4rem;
+	/*background: gold;*/
+	padding-left: 7.5rem;
+	padding-right: 6.5rem;
+}
+.jd-header .jd-header-box form input{
+	width: 100%;
+	height: 3rem;
+	margin-top: 0.5rem;
+	border-radius: 1.5rem;
+	padding-left: 4rem;
+}
+.jd-header .jd-header-box form .icon-search{
+	background-position: -6rem -11rem;
+	height: 20rem;
+	width: 20rem;
+	position: absolute;
+	top: 1rem;
+	left: 8.5rem;
+}
+/*轮播图*/
+.jd-banner{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.jd-banner ul{
+	width: 1000%;
+	transform: translateX(-10%);
+	-webkit-transform: translateX(-10%);
+}
+.jd-banner ul li{
+	float: left;
+	width: 10%;
+}
+.jd-banner ul li a img{
+	width: 100%;
+	display: block;
+}
+.jd-banner ol{
+	width: 12rem;
+	height: 1rem;
+	/*background: skyblue;*/
+	position: absolute;
+	left: 50%;
+	bottom: .6rem;
+	margin-left:-6rem ;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.jd-banner ol li{
+	width: 0.6rem;
+	height: 0.6rem;
+	border: 0.1rem solid #fff;
+	border-radius: 50%;
+}
+.jd-banner ol li.current{
+	background: #fff;
+}
+
+/*导航区域*/
+.jd-nav{
+	padding: 1rem;
+	background: #fff;
+}
+.jd-nav ul li{
+	width: 20%;
+	float: left;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+.jd-nav ul li img{
+	width: 4rem;
+	height: 4rem;
+}
+.jd-nav ul li p{
+	font-size: 1.3rem;
+}
+/*产品中心 */
+/*秒杀*/
+  /*头部*/
+.jd-product{
+	margin: 1.5rem 0.8rem 1rem;
+}
+.jd-product section{
+	width: 100%;
+	border: 0.1rem solid #e0e0e0;
+	background: #fff;
+	margin-bottom: 1rem;
+}
+.jd-product section .s-kill-title{
+	width: 100%;
+	height: 3rem;
+	/*伸缩布局*/
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+}
+ .s-kill-left{
+	width: 75%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	/*background: red;*/
+}
+ .s-kill-left img{
+	width: 5rem;
+	height: 2.8rem;
+}
+.s-kill-left .s-kill-time{
+	display: none;
+}
+.s-kill-left .s-kill-time span{
+	background: #000;
+	padding: 0 0.2rem;
+	color: #fff;
+	font-size: 1.3rem;
+}
+.s-kill-left .s-kill-time span:nth-child(3n){
+	color:#000;
+	background: #fff;
+	}
+.s-kill-right a{
+	padding-right: 2rem;
+	color: #E9232C;
+	position: relative;
+}
+.s-kill-right a::after{
+	content: '';
+	width: 1.2rem;
+	height: 1.2rem;
+	background: url(../images/arrow_rt.png) no-repeat;
+	background-size: 1.2rem 1.2rem;
+	position: absolute;
+	top:0.3rem;
+	right: 0.5rem;
+}
+/*内部*/
+.s-kill-con ul{
+	display: flex;
+	/*justify-content: space-between;*/
+	align-items: center;
+	padding: 1rem;
+}
+.s-kill-con ul li{
+	width: 33.3%;
+}
+.s-kill-con ul li a{
+	/*background: red;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-right: 1px solid #e0e0e0;
+}
+.s-kill-con ul li a:last-child{
+	border-right: none;
+}
+.s-kill-con ul li img{
+	width: 8rem;
+}
+.s-kill-con ul li .now-price{
+	color:#e9232c;
+	font-size: 1.6rem;
+	font-weight: bolder;
+}
+.s-kill-con ul li .old-price{
+	color:#ccc;
+	text-decoration: line-through;
+	font-size: 1.4rem;
+}
+/*为您推荐*/
+.jd-intro{
+	
+}
+.jd-intro .intro-title{
+	width: 100%;
+	height: 4rem;
+	line-height: 4rem;
+	/*background: red;*/
+	text-align: center;
+	position: relative;
+}
+.jd-intro .intro-title span{
+	background: #f5f5f5;
+	padding: .3rem 2rem;
+}
+.jd-intro .intro-title span::before{
+	content: '';
+	width: 90%;
+	height: 1px;
+	background: #e0e0e0;
+	position: absolute;
+	left: 5%;
+	top: 50%;
+	z-index: -1;
+}
+.jd-intro .intro-con ul li{
+	background: #fff;
+	float:left;
+	width: 49%;
+	margin-bottom: 1rem;
+	padding: 1rem;
+}
+.jd-intro .intro-con ul li:nth-child(2n){
+	float: right;
+}
+.jd-intro .intro-con ul li p{
+	/*text-align: center;*/
+	font-size: 1.4rem;
+	margin-bottom: 0.45rem;
+}
+.jd-intro .intro-con ul li img{
+	width: 80%;
+	
+}
+.jd-intro .intro-con ul li div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.jd-intro .intro-con ul li div button{
+	border: none;
+	background: purple;
+	color: #fff;
+	padding: 0.2rem 1rem;
+	border-radius: 0.3rem;
+}
+/*底部Tab选项卡*/
+.jd-footer{
+	width: 100%;
+	height: 5.4rem;
+	background: #fff;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	box-shadow: 0 -0.2rem 0.5rem #ccc;
+}
+.jd-footer ul{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.jd-footer ul li img{
+	width: 6rem;
+}

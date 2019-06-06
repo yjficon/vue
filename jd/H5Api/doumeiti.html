@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多媒体</title>
+		<link rel="stylesheet" href="css/player.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+			/*.itlike-play3{
+				background: url(../favicon.ico)no-repeat;
+				/*-webkit-background-size: 100% 100%;
+				background-size: 100% 100%;
+			}*/
+		</style>
+	</head>
+	<body>
+		<figure>
+			<figcaption>有趣V</figcaption>
+			<section class="player">
+				<video src="source/BigBuck.m4v"></video>
+				<!--控制-->
+				<div class="controls">
+					<!--播放  暂停 -->
+						<a href="javascript:;" class="switch itlike-play3 "></a>
+						<!--进度条-->
+						<div class="progress">
+							<div class="line"></div>
+							<div class="bar"></div>
+						</div>
+						<!--当前播放的时长/播放的总时长-->
+						<div class="time">
+							<span class="current">00:00:00</span>/
+							<span class="total">00:00:00</span>
+						</div>
+						<!--全屏/取消全屏-->
+						<a href="javascript:;"  class="expand itlike-enlarge"></a>
+				</div>
+			</section>
+		</figure>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(()=>{
+				//1.获取视频标签
+				let video = $('video').get(0);// .get(0) 将jquery转换为javascript
+				//2.当浏览器可以播放的时候
+				video.addEventListener('canplay',()=>{
+					//2.11显示视频标签 
+					$(video).show();
+					//2.2确定时长
+					let totalTime= formatTime(video.duration);
+					$('.total').html(totalTime);
+				});
+				 
+				 //3.播放和暂停
+				 $('.switch').on('click',function(){
+				 	//3.1判断播放的图标
+				 	if($(this).hasClass('itlike-play3')){//播放
+				 		video.play();
+				 		$(this).addClass('itlike-pause2').removeClass('itlike-play3');//切换图标
+				 	}else{
+				 		video.pause();
+				 		$(this).addClass('itlike-play3').removeClass('itlike-pause2');//切换图标
+				 	}
+				 });
+				 //4.进度条显示
+				 video.addEventListener('timeupdate',()=>{
+				 	//console.log(video.currentTime)//video.currentTime当前的秒数
+				 	//4.1求出播放的进度  当前时间/总时间*100+ ’%‘
+				 	let w= video.currentTime/video.duration*100 + '%';
+				 	//console.log(c)
+				 	$('.line').css('width',w);
+				 	//4.2修改当前播放的时间
+				 	$('.current').html(formatTime(video.currentTime));
+				 })
+				 //5.全屏
+				 $('.expand').on('click',function(){
+				 	if($(this).hasClass('itlike-enlarge')){//全屏
+				 		video.webkitRequestFullScreen();
+				 	}else{//取消全屏
+				 		document.webkitCancelFullScreen();
+				 	}
+				 })
+				 //6.视频播放完成
+				 video.addEventListener('ended',()=>{
+				 	//6.1当前的视频时间清零
+				 	video.currentTime = 0;
+				 	//6.2切换图标
+				 	$('.switch').addClass('itlike-play3').removeClass('itlike-pause2');
+				 })
+				//格式化时间
+				//7.点击bar跃进
+				$('.bar').on('click',function(e){
+					//当前视频播放的位置  = 点击的位置  / bar的长度 *总时长
+					//7.1获取点击的位置
+					let offset = e.offsetX;
+					console.log(offset,$(this).width())
+					//7.2求出当前的位置
+					let current = offset / $(this).width() * video.duration;
+					console.log(current)
+					//7.3改变当前播放的时间
+					video.currentTime = current;
+				});
+				
+				let formatTime = (time)=>{
+					let h =  Math.floor(time / 3600);
+					let m = Math.floor(time % (60*60)/60);
+					let s = Math.floor(time % 60);
+					//00:00:00
+					return  (h < 10 ? '0' + h : h) + ':' + (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="file" id="file" multiple=""/>
+		<div class="content"></div>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#file').on('change',function(){
+					//1.上传的文件可能是单个也可能试集合
+					//console.log(this.files)
+					//2.初始化reder对象
+					let reader = new FileReader();
+					//3.读取
+					reader.readAsText(this.files[0]);
+					//reader.readAsDataURL(this.files[0]);
+					//console.log(reader)
+					//4.读取完毕
+					$(reader).on('load',function(){
+						$('.content').html(this.result)
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

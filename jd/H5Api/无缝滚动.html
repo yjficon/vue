@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			nav{
+				width: 90rem;
+				height: 10rem;
+				border: 1px solid orange;
+				margin: 10rem auto;
+				overflow: hidden;
+			}
+			nav:hover ul{
+				animation-play-state: paused;
+			}
+			nav ul{
+				width: 200%;
+			    animation: moving 15s linear infinite;	
+			}
+			@-webkit-keyframes moving {
+				from { transform: translateX(0); }
+				to { transform: translateX(-90rem); }
+			}
+			@-o-keyframes moving {
+				from { transform: translateX(0); }
+				to { transform: translateX(-90rem); }
+			}
+			@-moz-keyframes moving {
+				from { transform: translateX(0); }
+				to { transform: translateX(-90rem); }
+			}
+			@keyframes moving {
+				from { transform: translateX(0); }
+				to { transform: translateX(-90rem); }
+			}
+			nav ul li{
+				float: left;
+				width: 10rem;
+				height: 10rem;
+			}
+			nav ul li img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><img src="images/f01.png" alt="" /></li>
+				<li><img src="images/f02.png" alt="" /></li>
+				<li><img src="images/f03.png" alt="" /></li>
+				<li><img src="images/f04.png" alt="" /></li>
+				<li><img src="images/f05.png" alt="" /></li>
+				<li><img src="images/f06.png" alt="" /></li>
+				<li><img src="images/f07.png" alt="" /></li>
+				<li><img src="images/f08.png" alt="" /></li>
+				<li><img src="images/f09.png" alt="" /></li>
+				<li><img src="images/f01.png" alt="" /></li>
+				<li><img src="images/f02.png" alt="" /></li>
+				<li><img src="images/f03.png" alt="" /></li>
+				<li><img src="images/f04.png" alt="" /></li>
+				<li><img src="images/f05.png" alt="" /></li>
+				<li><img src="images/f06.png" alt="" /></li>
+				<li><img src="images/f07.png" alt="" /></li>
+				<li><img src="images/f08.png" alt="" /></li>
+				<li><img src="images/f09.png" alt="" /></li>
+			</ul>
+			
+		</nav>
+	</body>
+</html>

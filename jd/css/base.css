@@ -1,0 +1,104 @@
+*, ::before,::after{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;/*box适配*/
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/*去除移动端点击产生的高亮效果*/
+	-webkit-tap-highlight-color: transparent;
+}
+html{
+	font-size: 10px;
+	font-family: "微软雅黑";
+	color: #000;
+}
+a{
+	text-decoration: none;
+	color: #666;
+}
+ul,ol{
+	list-style: none;
+}
+input{
+	border: none;
+	outline: none;
+	/*针对ios浏览器,清除默认非扁平化风格*/
+	-webkit-appearance:none;
+}
+/*清除浮动*/
+.clearfix::before,.clearfix::after{
+	content: '';
+	height: 0;
+	line-height: 0;
+	display: block;
+	visibility: hidden;
+	clear: both;
+}
+/*配置所有 icon开头的图片*/
+[class^='icon-'],[class*=' icon-']{
+	background: url(../images/sprites.png)no-repeat;
+	-webkit-background-size: 20rem 20rem;
+	background-size: 20rem 20rem;
+}
+
+.b-bottom{
+	border: 1px solid #e0e0e0;
+}
+/********************************导航样式*************************/
+.header{
+	width: 100%;
+	height: 4.4rem;
+	background: url(../images/header-bg.png) repeat-x;
+	-webkit-background-size:0.1rem 4.4rem ;
+	background-size:0.1rem 4.4rem ;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+}
+.header .icon-back,.header .icon-menu{
+	width: 2rem;
+	height: 4rem;
+	/*background: red;*/
+	position: absolute;
+	top: 0;
+	/*背景图的定位从内容开始计算*/
+	-webkit-background-origin: content-box;
+	background-origin: content-box;
+	/*背景图的定位从内容开始显示*/
+	background-clip: content-box;
+}
+.header .icon-back{
+	left: 0;
+	background-position: -2rem 1rem;
+	
+}
+.header .icon-menu{
+	right: 0;
+	margin-right: 1rem;
+	background-position: -6.2rem 1rem;
+}
+.header h3{
+	width: 100%;
+	height: 4.4rem;
+	line-height: 4.4rem;
+	text-align: center;
+	padding-left: 4rem;
+	padding-right: 4rem;
+	overflow: hidden;
+	font-size: 1.6rem;
+	color: #666;
+}
+.header form{
+	width: 100%;
+	height: 4.4rem;
+	padding-left: 4rem;
+	padding-right: 4rem;
+}
+.header form input{
+	width: 100%;
+	height: 3.4rem;
+	border: 1px solid #e0e0e0;
+	margin-top: 0.5rem;
+	padding-left: 0.5rem;
+}
